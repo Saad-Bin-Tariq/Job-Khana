@@ -24,8 +24,9 @@ const AddProd = () => {
       const storedUser = JSON.parse(localStorage.getItem("user"));
 
       if (storedUser && storedUser.token) {
+        const apiUrl = process.env.REACT_APP_API_KEY;
         const res = await axios.post(
-          "http://localhost:5000/api/v1/jobs",
+          `${apiUrl}/api/v1/jobs`,
           {
             company,
             position,

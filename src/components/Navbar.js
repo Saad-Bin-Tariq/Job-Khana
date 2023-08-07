@@ -38,7 +38,7 @@ const Navbar = () => {
       <header id="header" className="fixed-top">
         <div className="container d-flex align-items-center">
           <h1 className="logo me-auto">
-            <a href="index.html">Job Khana</a>
+            <a href="">Job Khana</a>
           </h1>
           {/* Uncomment below if you prefer to use an image logo */}
           {/* <a href="index.html" className="logo me-auto"><img src="assets/img/logo.png" alt="" className="img-fluid"></a>*/}

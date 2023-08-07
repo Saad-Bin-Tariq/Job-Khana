@@ -12,7 +12,8 @@ const Products = () => {
       const storedUser = JSON.parse(localStorage.getItem("user"));
 
       if (storedUser && storedUser.token) {
-        const res = await axios.get("http://localhost:5000/api/v1/jobs", {
+        const apiUrl = process.env.REACT_APP_API_KEY;
+        const res = await axios.get(`${apiUrl}/api/v1/jobs`, {
           headers: {
             Authorization: "Bearer " + storedUser.token,
           },
@@ -42,7 +43,7 @@ const Products = () => {
           <AddProd />
           <div className="row">
             {dataError !== "" && <p>{dataError}</p>}
-            {useData.length == 0 ? (
+            {useData.length === 0 ? (
               <>
                 <footer id="footer">
                   <div className="footer-newsletter">

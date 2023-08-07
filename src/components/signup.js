@@ -26,14 +26,12 @@ function SignUpForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/v1/auth/register",
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const apiUrl = process.env.REACT_APP_API_KEY;
+      const response = await axios.post(`${apiUrl}/api/v1/auth/register`, {
+        name,
+        email,
+        password,
+      });
 
       if (response.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
